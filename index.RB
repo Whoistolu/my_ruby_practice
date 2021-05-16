@@ -149,3 +149,19 @@ nil.to_s      #=> ""
 
 :symbol.to_s  #=> "symbol"
 
+Create a Symbol
+To create a symbol, simply put a colon at the beginning of some text:
+
+:my_symbol
+
+Symbols vs. Strings
+
+"string" == "string"  #=> true
+
+"string".object_id == "string".object_id  #=> false
+
+:symbol.object_id == :symbol.object_id    #=> true
+
+Symbols vs. Strings
+To get a better idea of how symbols are stored in memory, give this a whirl in irb or a REPL. The  https://ruby-doc.org/core-2.7.1/Object.html#method-i-object_id
+
