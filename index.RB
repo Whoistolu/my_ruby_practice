@@ -200,3 +200,17 @@ You cannot use any symbols other than _, ?, !, and =.
 You cannot use ?, !, or = anywhere other than at the end of the name.
 You cannot begin a method name with a number.
 Here are some examples of valid and invalid method names:
+
+method_name      # valid
+_name_of_method  # valid
+1_method_name    # invalid
+method_27        # valid
+method?_name     # invalid
+method_name!     # valid
+begin            # invalid (Ruby reserved word)
+begin_count      # valid
+Can you tell why some of these names are invalid?
+
+In general, short but descriptive is the name of the naming game. You want to be able to tell what a method is expected to do based on its name, so please don’t name your method do_stuff.
+
+If your method does so many things that you feel it requires a very long name, then your method should probably be broken up into several smaller and simpler methods. Ideally, each method should do only one thing. This practice will pay dividends down the road in terms of readability, scalability, and maintainability. (It also makes testing your code a lot easier, which will be covered in a later lesson.)
