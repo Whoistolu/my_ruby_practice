@@ -165,3 +165,38 @@ Symbols vs. Strings
 Symbols vs. Strings
 To get a better idea of how symbols are stored in memory, give this a whirl in irb or a REPL. The  https://ruby-doc.org/core-2.7.1/Object.html#method-i-object_id
 
+"anything".reverse
+In this case, #reverse is a built-in method for String objects.
+
+However, there are also some built-in methods that Ruby makes globally accessible, such as print and puts. These methods are called with just their name and any arguments. (If you’re super curious, these methods are made globally available by the Kernel module through the Object class, but that’s far more than you need to know right now.)
+
+puts "anything" #=> anything
+It’s worth noting that in most languages, arguments are passed to methods by wrapping them in parentheses (). In Ruby, however, the parentheses are generally optional. We could rewrite the above code as puts("anything"), which Ruby would interpret in the same way.
+
+Creating a Method
+You can create your own custom methods in Ruby using the following syntax:
+
+def my_name
+  "Joe Smith"
+end
+
+puts my_name    #=> "Joe Smith"
+Let’s break this example down:
+
+def is a built-in keyword that tells Ruby that this is the start of a method definition.
+my_name is the name of your new method. You can name your methods almost anything you want, but there are some constraints and conventions, which are described in the next section.
+"Joe Smith" is the code inside the method body. All of the logic for your method is contained in the indented lines of the method body. This particular method returns a string when the method is called.
+end is a built-in keyword that tells Ruby that this is the end of the method definition.
+To call the method, you simply need to use its name, as shown in the last line of the example.
+Method Names
+As mentioned above, you can name your methods almost anything you want, but you shouldn’t pick names haphazardly. There are certain conventions that are recommended in order to improve the readability and maintainability of your code.
+
+Your method names can use numbers, capital letters, lowercase letters, and the special characters _, ?, !, and =. Just like with variable names in Ruby, the convention for a method name with multiple words is to use snake_case, separating words with underscores.
+
+Here are some things you are not allowed to do with your method names:
+
+You cannot name your method one of Ruby’s approximately 40 reserved words, such as end, while, or for. Checkout the full list here.
+You cannot use any symbols other than _, ?, !, and =.
+You cannot use ?, !, or = anywhere other than at the end of the name.
+You cannot begin a method name with a number.
+Here are some examples of valid and invalid method names:
