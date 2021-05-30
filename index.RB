@@ -236,3 +236,45 @@ end
 
 puts greet("Jane") #=> Hello, Jane!
 puts greet #=> Hello, stranger!
+
+What Methods Return
+An important detail that a programmer must learn is understanding what your methods return. Having a good understanding of what your methods are returning is an important part of debugging your code when things don’t behave as expected.
+
+How do we tell our methods what to return? Let’s revisit our my_name example method:
+
+def my_name
+  "Joe Smith"
+end
+
+puts my_name #=> "Joe Smith"
+Our my_name method returns “Joe Smith”. This may seem obvious because it’s the only thing inside the method. In most languages, however, such a method would not return anything because it does not have an explicit return statement, which is a statement that starts with the return keyword. The above example could just as easily be written with an explicit return:
+
+def my_name
+  return "Joe Smith"
+end
+
+puts my_name #=> "Joe Smith"
+Ruby is one of the few languages that offers implicit return for methods, which means that a Ruby method will return the last expression that was evaluated even without the return keyword. The last expression that was evaluated may or may not be the last line in the code, as you can see in the following example:
+
+def even_odd(number)
+  if number % 2 == 0
+    "That is an even number."
+  else
+    "That is an odd number."
+  end
+end
+
+puts even_odd(16) #=>  That is an even number.
+puts even_odd(17) #=>  That is an odd number.
+Here, the method’s return is dependent on the result of the if condition. If the argument is an even number, the expression inside the else statement never gets evaluated, so the even_odd method returns "That is an even number."
+
+Even though Ruby offers the ease of using implicit returns, explicit returns still have a place in Ruby code. An explicit return (using the keyword return) essentially tells Ruby, “This is the last expression you should evaluate.” This example shows how using return stops the method from continuing:
+
+def my_name
+  return "Joe Smith"
+  "Jane Doe"
+end
+
+puts my_name #=> "Joe Smith"
+For example, an explicit return can be useful when you want to write a method that checks for input errors before continuing.
+
