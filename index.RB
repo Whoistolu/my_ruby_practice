@@ -1,0 +1,280 @@
+# Numbers
+
+# Addition
+1 + 1   #=> 2
+
+# Subtraction
+2 - 1   #=> 1
+
+# Multiplication
+2 * 2   #=> 4
+
+# Division
+10 / 5  #=> 2
+
+# Exponent
+2 ** 2  #=> 4
+3 ** 4  #=> 81
+
+# Modulus (find the remainder of division)
+8 % 2   #=> 0  (8 / 2 = 4; no remainder)
+10 % 4  #=> 2  (10 / 4 = 2 with a remainder of 2)
+
+# Integers and Floats
+
+17 / 5    #=> 3, not 3.4
+17 / 5.0  #=> 3.4
+
+# Converting Number Types
+
+# To convert an integer to a float:
+13.to_f   #=> 13.0
+
+# To convert a float to an integer:
+13.0.to_i #=> 13
+13.9.to_i #=> 13
+
+# Some Useful Number Methods
+# even
+
+6.even? #=> true
+7.even? #=> false
+
+# odd
+
+6.odd? #=> false
+7.odd? #=> true
+
+# strings
+# concatination
+
+# With the plus operator:
+"Welcome " + "to " + "Odin!"    #=> "Welcome to Odin!"
+
+# With the shovel operator:
+"Welcome " << "to " << "Odin!"  #=> "Welcome to Odin!"
+
+# With the concat method:
+"Welcome ".concat("to ").concat("Odin!")  #=> "Welcome to Odin!"
+
+# Substrings
+
+"hello"[0]      #=> "h"
+
+"hello"[0..1]   #=> "he"
+
+"hello"[0, 4]   #=> "hell"
+
+"hello"[-1]     #=> "o"
+
+scape characters
+Escape characters allow you to type in representations of whitespace characters and to include quotation marks inside your string without accidentally ending it. As a reminder, escape characters only work inside double quotation marks.
+
+\\  #=> Need a backslash in your string?
+\b  #=> Backspace
+\r  #=> Carriage return, for those of you that love typewriters
+\n  #=> Newline. You'll likely use this one the most.
+\s  #=> Space
+\t  #=> Tab
+\"  #=> Double quotation mark
+\'  #=> Single quotation mark
+
+The best thing to do is play around with them in irb or a REPL.
+
+    irb(main):001:0> puts "Hello \n\nHello"
+    Hello
+    
+    Hello
+    => nil
+    Interpolation
+    String interpolation allows you to evaluate a string that contains placeholder variables. This is a very useful and common technique, so you will likely find yourself using this often. Be sure to use double quotes so that string interpolation will work!
+    
+    name = "Odin"
+    
+    puts "Hello, #{name}" #=> "Hello, Odin"
+    puts 'Hello, #{name}' #=> "Hello, #{name}"
+
+    Just remember, strings have loads of methods provided to you for free, and you can find them all in the https://ruby-doc.org/core-2.7.1/String.html
+
+    #capitalize
+
+"hello".capitalize #=> "Hello"
+#include?
+
+"hello".include?("lo")  #=> true
+
+"hello".include?("z")   #=> false
+#upcase
+
+"hello".upcase  #=> "HELLO"
+#downcase
+
+"Hello".downcase  #=> "hello"
+#empty?
+
+"hello".empty?  #=> false
+
+"".empty?       #=> true
+#length
+
+"hello".length  #=> 5
+#reverse
+
+"hello".reverse  #=> "olleh"
+#split
+
+"hello world".split  #=> ["hello", "world"]
+
+"hello".split("")    #=> ["h", "e", "l", "l", "o"]
+#strip
+
+" hello, world   ".strip  #=> "hello, world"
+
+"he77o".sub("7", "l")           #=> "hel7o"
+
+"he77o".gsub("7", "l")          #=> "hello"
+
+"hello".insert(-1, " dude")     #=> "hello dude"
+
+"hello world".delete("l")       #=> "heo word"
+
+"!".prepend("hello, ", "world") #=> "hello, world!"
+
+Converting other objects to strings
+Using the to_s method, you can convert pretty much anything to a string. Here are some examples:
+
+5.to_s        #=> "5"
+
+nil.to_s      #=> ""
+
+:symbol.to_s  #=> "symbol"
+
+Create a Symbol
+To create a symbol, simply put a colon at the beginning of some text:
+
+:my_symbol
+
+Symbols vs. Strings
+
+"string" == "string"  #=> true
+
+"string".object_id == "string".object_id  #=> false
+
+:symbol.object_id == :symbol.object_id    #=> true
+
+Symbols vs. Strings
+To get a better idea of how symbols are stored in memory, give this a whirl in irb or a REPL. The  https://ruby-doc.org/core-2.7.1/Object.html#method-i-object_id
+
+"anything".reverse
+In this case, #reverse is a built-in method for String objects.
+
+However, there are also some built-in methods that Ruby makes globally accessible, such as print and puts. These methods are called with just their name and any arguments. (If you’re super curious, these methods are made globally available by the Kernel module through the Object class, but that’s far more than you need to know right now.)
+
+puts "anything" #=> anything
+It’s worth noting that in most languages, arguments are passed to methods by wrapping them in parentheses (). In Ruby, however, the parentheses are generally optional. We could rewrite the above code as puts("anything"), which Ruby would interpret in the same way.
+
+Creating a Method
+You can create your own custom methods in Ruby using the following syntax:
+
+def my_name
+  "Joe Smith"
+end
+
+puts my_name    #=> "Joe Smith"
+Let’s break this example down:
+
+def is a built-in keyword that tells Ruby that this is the start of a method definition.
+my_name is the name of your new method. You can name your methods almost anything you want, but there are some constraints and conventions, which are described in the next section.
+"Joe Smith" is the code inside the method body. All of the logic for your method is contained in the indented lines of the method body. This particular method returns a string when the method is called.
+end is a built-in keyword that tells Ruby that this is the end of the method definition.
+To call the method, you simply need to use its name, as shown in the last line of the example.
+Method Names
+As mentioned above, you can name your methods almost anything you want, but you shouldn’t pick names haphazardly. There are certain conventions that are recommended in order to improve the readability and maintainability of your code.
+
+Your method names can use numbers, capital letters, lowercase letters, and the special characters _, ?, !, and =. Just like with variable names in Ruby, the convention for a method name with multiple words is to use snake_case, separating words with underscores.
+
+Here are some things you are not allowed to do with your method names:
+
+You cannot name your method one of Ruby’s approximately 40 reserved words, such as end, while, or for. Checkout the full list here.
+You cannot use any symbols other than _, ?, !, and =.
+You cannot use ?, !, or = anywhere other than at the end of the name.
+You cannot begin a method name with a number.
+Here are some examples of valid and invalid method names:
+
+method_name      # valid
+_name_of_method  # valid
+1_method_name    # invalid
+method_27        # valid
+method?_name     # invalid
+method_name!     # valid
+begin            # invalid (Ruby reserved word)
+begin_count      # valid
+Can you tell why some of these names are invalid?
+
+In general, short but descriptive is the name of the naming game. You want to be able to tell what a method is expected to do based on its name, so please don’t name your method do_stuff.
+
+If your method does so many things that you feel it requires a very long name, then your method should probably be broken up into several smaller and simpler methods. Ideally, each method should do only one thing. This practice will pay dividends down the road in terms of readability, scalability, and maintainability. (It also makes testing your code a lot easier, which will be covered in a later lesson.)
+
+    Parameters and Arguments
+Of course, not all methods are as simplistic as the my_name example method above. After all, what good are methods if you can’t interact with them? When you want to return something other than a fixed result, you need to give your methods parameters. Parameters are variables that your method will receive when it is called. You can have more meaningful and useful interactions with your methods by using parameters to make them more versatile.
+
+def greet(name)
+  "Hello, " + name + "!"
+end
+
+puts greet("John") #=> Hello, John!
+In this example, name is a parameter that the greet method uses to return a more specific greeting. The method was called with the argument "John", which returns the string “Hello John!”
+
+If you’re wondering what the differences are between an argument and a parameter, parameters act as placeholder variables in the template of your method, whereas arguments are the actual variables that get passed to the method when it is called. Thus, in the example above, name is a parameter and "John" is an argument. The two terms are commonly used interchangeably, though, so don’t worry too much about this distinction.
+
+Default Parameters
+What if you don’t always want to provide arguments for each parameter that your method accepts? That’s where default parameters can be useful. Going back to our simple example above, what happens if we don’t know the person’s name? We can change our greet method to use a default name of “stranger”:
+
+def greet(name = "stranger")
+  "Hello, " + name + "!"
+end
+
+puts greet("Jane") #=> Hello, Jane!
+puts greet #=> Hello, stranger!
+
+What Methods Return
+An important detail that a programmer must learn is understanding what your methods return. Having a good understanding of what your methods are returning is an important part of debugging your code when things don’t behave as expected.
+
+How do we tell our methods what to return? Let’s revisit our my_name example method:
+
+def my_name
+  "Joe Smith"
+end
+
+puts my_name #=> "Joe Smith"
+Our my_name method returns “Joe Smith”. This may seem obvious because it’s the only thing inside the method. In most languages, however, such a method would not return anything because it does not have an explicit return statement, which is a statement that starts with the return keyword. The above example could just as easily be written with an explicit return:
+
+def my_name
+  return "Joe Smith"
+end
+
+puts my_name #=> "Joe Smith"
+Ruby is one of the few languages that offers implicit return for methods, which means that a Ruby method will return the last expression that was evaluated even without the return keyword. The last expression that was evaluated may or may not be the last line in the code, as you can see in the following example:
+
+def even_odd(number)
+  if number % 2 == 0
+    "That is an even number."
+  else
+    "That is an odd number."
+  end
+end
+
+puts even_odd(16) #=>  That is an even number.
+puts even_odd(17) #=>  That is an odd number.
+Here, the method’s return is dependent on the result of the if condition. If the argument is an even number, the expression inside the else statement never gets evaluated, so the even_odd method returns "That is an even number."
+
+Even though Ruby offers the ease of using implicit returns, explicit returns still have a place in Ruby code. An explicit return (using the keyword return) essentially tells Ruby, “This is the last expression you should evaluate.” This example shows how using return stops the method from continuing:
+
+def my_name
+  return "Joe Smith"
+  "Jane Doe"
+end
+
+puts my_name #=> "Joe Smith"
+For example, an explicit return can be useful when you want to write a method that checks for input errors before continuing.
+
