@@ -144,3 +144,43 @@ sum = x + y #=> 500
 
 puts "The sum of #{x} and #{y} is #{sum}."
 #=> The sum of 400 and 100 is 500.
+
+Chaining Methods
+One of the magical properties of methods that allows you to write very concise code is being able to chain methods together. This can be done using Ruby’s built-in methods or with methods that you create.
+
+phrase = ["be", "to", "not", "or", "be", "to"]
+
+puts phrase.reverse.join(" ").capitalize
+#=> "To be or not to be"
+Chaining methods together like this effectively has each method call build off of the outcome of the previous method in the chain. The process that takes place essentially produces the following steps:
+
+["be", "to", "not", "or", "be", "to"].reverse
+= ["to", "be", "or", "not", "to", "be"].join(" ")
+= "to be or not to be".capitalize
+= "To be or not to be"
+Predicate Methods
+You will sometimes encounter built-in Ruby methods that have a question mark (?) at the end of their name, such as even?, odd?, or between?. These are all predicate methods, which is a naming convention that Ruby uses for methods that return a Boolean, that is, they return either true or false.
+
+puts 5.even?  #=> false
+puts 6.even?  #=> true
+puts 17.odd?  #=> true
+
+puts 12.between?(10, 15)  #=> true
+You can also create your own method with a ? at the end of its name to indicate that it returns a Boolean. Ruby doesn’t enforce this naming convention, but you will thank yourself later for following this guideline.
+
+Bang Methods
+Observe the example below:
+
+whisper = "HELLO EVERYBODY"
+
+puts whisper.downcase #=> "hello everybody"
+puts whisper #=> "HELLO EVERYBODY"
+What gives? I thought we downcased that thing! So why was it back to all uppercase when we called it again?
+
+When we call a method on an object, such as our whisper string above, it does not modify the original value of that object. A general rule in programming is that you do not want your methods to overwrite the objects that you call them on. This protects you from irreversibly overwriting your data by accident. You are able to overwrite your data by explicitly re-assigning a variable (such as whisper = whisper.downcase). Another way to do this type of reassignment is with bang methods, which are denoted with an exclamation mark (!) at the end of the method name.
+
+By adding a ! to the end of your method, you indicate that this method performs its action and simultaneously overwrites the value of the original object with the result.
+
+puts whisper.downcase! #=> "hello everybody"
+puts whisper #=> "hello everybody"
+Writing whisper.downcase! is the equivalent of writing whisper = whisper.downcase.
