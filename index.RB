@@ -191,3 +191,34 @@ Enumerables are a set of convenient built-in methods in Ruby that are included a
 We will run through the enumerable methods that you will most commonly use and see out in the wild. This is certainly not an exhaustive list, so be sure to have a look at the Ruby docs to see what else the Enumerable module offers.
 
 For all of the examples throughout this lesson, feel free to follow along in irb or repl.it (an online REPL environment) to get a better feel for how they work.
+
+Life Before Enumerables
+Let’s say that you wanted to make an invite list for your birthday using your friends array but that you don’t want to invite your friend Brian because he’s a bit of a nutcase at parties and always drinks way too much.
+
+With the loops you’ve learned so far, you might do something like this:
+
+friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
+invited_list = []
+
+for friend in friends do
+  if friend != 'Brian'
+  invited_list.push(friend)
+  end
+end
+
+invited_list #=> ["Sharon", "Leo", "Leila", "Arun"]
+That’s not too hard, but imagine having to do that for every party you host from now until the end of time! It might be easier to just stop hanging out with Brian.
+
+Using the #select enumerable method (which we’ll get into much more detail about later), you could change the above code to this:
+
+friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
+
+friends.select { |friend| friend != 'Brian' }
+ #=> ["Sharon", "Leo", "Leila", "Arun"]
+or even better and more to the point:
+
+friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
+
+friends.reject { |friend| friend == 'Brian' }
+ #=> ["Sharon", "Leo", "Leila", "Arun"]
+You just cut down what was previously an 8 line program down to 2 lines. Amazing! Imagine all the time you’ll save sorting your invite lists now.
