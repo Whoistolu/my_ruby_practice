@@ -184,3 +184,10 @@ By adding a ! to the end of your method, you indicate that this method performs 
 puts whisper.downcase! #=> "hello everybody"
 puts whisper #=> "hello everybody"
 Writing whisper.downcase! is the equivalent of writing whisper = whisper.downcase.
+
+basic Enumerable Methods
+Enumerables are a set of convenient built-in methods in Ruby that are included as part of both arrays and hashes. There are some iteration patterns that you’ll find yourself doing again and again, such as transforming, searching for, and selecting subsets of elements in your collections. Enumerables were designed to make implementing these iteration patterns (and therefore your life as a developer) much, much easier.
+
+We will run through the enumerable methods that you will most commonly use and see out in the wild. This is certainly not an exhaustive list, so be sure to have a look at the Ruby docs to see what else the Enumerable module offers.
+
+For all of the examples throughout this lesson, feel free to follow along in irb or repl.it (an online REPL environment) to get a better feel for how they work.
