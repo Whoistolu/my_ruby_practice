@@ -344,3 +344,35 @@ salaries = [1200, 1500, 1100, 1800]
 salaries.map { |salary| salary - 700 }
 #=> [500, 800, 400, 1100]
 Whenever you want to return a new array with the results of running your block of code, #map is the method for you!
+
+The select Method
+You’ve already seen the #select method in action at the beginning of this lesson in our quest to make Brian an outcast.
+
+The #select method (also called #filter) passes every item in an array to a block and returns a new array with only the items for which the condition you set in the block evaluated to true.
+
+First, let’s explore how we would accomplish the same thing using #each:
+
+friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
+invited_list = []
+
+friends.each do |friend|
+  if friend != 'Brian'
+    invited_list.push(friend)
+  end
+end
+
+invited_list
+ #=> ["Sharon", "Leo", "Leila", "Arun"]
+Using our shiny new #select method, this code can be simplified down to two lines:
+
+friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
+
+friends.select { |friend| friend != 'Brian' }
+
+ #=> ["Sharon", "Leo", "Leila", "Arun"]
+Now that we’ve cut out Brian, we can send out the invites! Let’s say that the friends who you invited to your party have gotten back to you, and their responses are all recorded in a hash. Let’s use #select to see who’s coming. Recall that when you use an enumerable method with a hash, you need to set up block variables for both the key and the value:
+
+responses = { 'Sharon' => 'yes', 'Leo' => 'no', 'Leila' => 'no', 'Arun' => 'yes' }
+responses.select { |person, response| response == 'yes'}
+#=> {"Sharon"=>"yes", "Arun"=>"yes"}
+Looks like only Sharon and Arun can go. You’re going to need more people for a good party. Sounds like it’s time for you to reluctantly call Brian, who you know will bring a batch of his awful home-brewed IPA. Maybe his last batch has gotten better?
