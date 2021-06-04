@@ -10,3 +10,11 @@ teacher_mailboxes = [
   ["Jones", "Lewis", "Lopez", "Moore"],
   ["Perez", "Scott", "Smith", "Young"]
 ]
+
+teacher_mailboxes[0][0]
+teacher_mailboxes[1][0]
+teacher_mailboxes[2][0]
+teacher_mailboxes[0][-1]
+teacher_mailboxes[-1][0]
+teacher_mailboxes[-1][-2]
+
