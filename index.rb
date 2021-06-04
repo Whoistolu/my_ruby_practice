@@ -1,18 +1,12 @@
-friends = ['Tolu', 'Leo', 'Sharon','Bola', 'Folake']
-invited_list = []
+test_scores = [
+  [97, 76, 79, 93],
+  [79, 84, 76, 79],
+  [88, 67, 64, 76],
+  [94, 55, 67, 81]
+]
 
-friends.each do |friend|
-  if friend != 'Leo'
-    invited_list.push(friend)    
-  end
-end
-
-print invited_list
-
-
-
-friends = ['Sam', 'Theo', 'Aaron','Oyebola', 'Folakemi']
-
-friends.select { |friend| friend != 'Oyebola' }
-
-print friend
+teacher_mailboxes = [
+  ["Adams", "Baker", "Clark", "Davis"],
+  ["Jones", "Lewis", "Lopez", "Moore"],
+  ["Perez", "Scott", "Smith", "Young"]
+]
