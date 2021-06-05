@@ -5,7 +5,7 @@ def caesar_cipher(str, shift=1)
 
   str.each_char do |letter|
 
-    if letter = " "
+    if letter == " "
         caesar += " "
     else
         old_idx = alphabet.find_index(letter)
@@ -15,5 +15,5 @@ def caesar_cipher(str, shift=1)
   end
     
 
-  caesar
+  caesar("abc abc", 4)
 end
