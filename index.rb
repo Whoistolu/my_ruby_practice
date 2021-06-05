@@ -15,5 +15,5 @@ def caesar_cipher(str, shift=1)
   end
     
 
-  caesar("abc abc", 4)
+  caesar_cipher("abc abc", 4)
 end
