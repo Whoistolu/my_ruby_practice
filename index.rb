@@ -1,3 +1,6 @@
-name = "Toluwase"
+# Basics of getting user input
 
-puts "Helo my new friend, #{name}"
+puts "Can we have your name? "
+name = gets.chomp()
+puts ("Hello " + name + ", We are glad to have you on board") 
+
