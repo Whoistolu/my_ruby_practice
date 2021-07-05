@@ -11,5 +11,4 @@ first_num = gets.chomp()
 puts "Kindly enter another number"
 second_number = gets.chomp()
 
-puts (first_num + second_number)
-
+puts (first_num.to_f + second_number.to_f)
