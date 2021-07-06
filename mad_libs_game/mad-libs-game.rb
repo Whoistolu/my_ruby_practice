@@ -1,0 +1,10 @@
+puts ("Kindly enter a colour: ")
+colour = gets.chomp()
+puts ("Please enter a plural noun: ")
+plural_noun = gets.chomp()
+puts ("Type in a celebrity name: ")
+celebrity = gets.chomp()
+
+puts ("Roses are " + colour)
+puts (plural_noun + " are blue")
+puts ("I love " + celebrity)
