@@ -1,7 +1,7 @@
 # ruby-checks
 
 
-A  Repository that consist of different ruby projects
+I built various Ruby projects in this repository
 
 ## Built With
 
@@ -9,7 +9,6 @@ A  Repository that consist of different ruby projects
 
 
 ## Getting Started
-
 
 To get a local copy up and running follow these simple example steps.
 
