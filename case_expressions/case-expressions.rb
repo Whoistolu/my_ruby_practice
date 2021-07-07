@@ -1,4 +1,3 @@
-#mutalibadebayo03@gmail.com
 
 def get_day_name(day)
     day_name = ""
@@ -23,3 +22,5 @@ def get_day_name(day)
     end
     
 end
+
+puts get_day_name("Mon")
