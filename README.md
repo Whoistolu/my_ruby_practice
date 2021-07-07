@@ -1,7 +1,7 @@
 # ruby-checks
 
 
-I built various Ruby projects in this repository
+I built various baic Ruby projects in this repository
 
 ## Built With
 
