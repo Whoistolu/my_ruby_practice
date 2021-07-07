@@ -24,3 +24,5 @@ def get_day_name(day)
 end
 
 puts get_day_name("Mon")
+
+#sweet tooth, sherlock holmes, inception, Inferno, the judge. time lapse, the big short, interstellar, the accountnt
