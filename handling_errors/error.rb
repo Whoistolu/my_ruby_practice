@@ -13,5 +13,7 @@ begin
     # num = 10 / 0
 rescue ZeroDivisionError
     puts "A division by zero error"
+rescue TypeError
+    puts "Wrong type"
 end
 
