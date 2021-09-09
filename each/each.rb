@@ -1,6 +1,6 @@
-# friends = ["haastrup", "bolu", "femi", "deola", "ahmed"]
+friends = ["haastrup", "bolu", "femi", "deola", "ahmed"]
 
-# friends.each {|friend| puts "Meet my good pal, " + friend}
+friends.each {|friend| puts "Meet my good pal, " + friend}
 
 my_array = [15, 2]
 
